@@ -1,0 +1,106 @@
+.footer {
+  background-color: $dark-blue;
+  color: $white;
+  text-align: center;
+  padding: 2.5rem;
+
+
+  .container {
+    @include breakpoint-up(large) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      grid-template-columns: 2fr 1fr 1fr 3fr;
+      grid-template-areas:
+        "logo col1 col2 cta"
+        "socials col1 col2 copy";
+      gap: 1.25rem;
+      justify-items: start;
+    }
+  }
+
+  a {
+    color: $white;
+    font-size: 0.875rem;
+    transition: color 250ms ease-in-out;
+  }
+
+  &__logo {
+    margin-bottom: 1.875rem;
+    display: inline-block;
+
+    @include breakpoint-up(large) {
+      grid-area: logo;
+      margin-bottom: 0;
+    }
+  }
+
+  &__socials {
+    margin-bottom: 1.875rem;
+    height: 1.25rem;
+
+    a{
+        height: 1.25rem;
+        
+        & svg path{
+            transition: fill 250ms ease-in-out;
+        }
+
+        &:hover svg path{
+            fill: $lime-green;
+        }
+    }
+
+    a:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    @include breakpoint-up(large) {
+      grid-area: socials;
+      margin-bottom: 0;
+    }
+  }
+
+  &__links {
+    line-height: 2;
+    
+    a:hover{
+        color: $lime-green;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      justify-content: space-around;
+    }
+  }
+
+  .col-1 {
+    grid-area: col1;
+  }
+
+  .col-2 {
+    grid-area: col2;
+    @include breakpoint-down(small) {
+      margin-bottom: 1.8753rem;
+    }
+  }
+
+  &__cta {
+    margin-bottom: 1.875rem;
+
+    @include breakpoint-up(large) {
+        margin-bottom: 0;
+        grid-area: cta;
+        justify-self: end;
+    }
+  }
+
+  &__copy {
+    font-size: 0.8125rem;
+    color: $grayish-blue;
+
+    @include breakpoint-up(large) {
+      grid-area: copy;
+      justify-self: end;
+    }
+  }
+}

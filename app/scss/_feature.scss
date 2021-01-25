@@ -1,0 +1,54 @@
+.feature{
+    background-color: $light-grayish-blue;
+    text-align: center;
+
+    @include breakpoint-up(small){
+        text-align: left;
+    }
+
+    &__header{
+        margin-bottom: 3.625rem;
+
+        @include breakpoint-up(large){
+            margin-bottom: 4.0625rem;
+            max-width: 60%;
+        }
+    }
+
+    &__grid{
+        @include breakpoint-up(small){
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint-up(large){
+            :not(:last-child){
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &__item{
+
+        @include breakpoint-up(small){
+            flex: 0 0 50%;
+        }
+
+        @include breakpoint-up(large){
+            flex: 1;
+            
+        }
+    }
+
+    &__icon{
+        margin-bottom: 1.875rem;
+
+        @include breakpoint-up(large){
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__description{
+        font-size: $font-sm;
+    }
+}
