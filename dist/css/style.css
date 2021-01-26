@@ -347,10 +347,15 @@ button:hover::before,
   width: 27px;
   -webkit-transform-origin: 3px 1px;
           transform-origin: 3px 1px;
-  -webkit-transition: opacity 100ms ease-in, -webkit-transform 250ms ease-in-out;
-  transition: opacity 100ms ease-in, -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out, opacity 100ms ease-in;
-  transition: transform 250ms ease-in-out, opacity 100ms ease-in, -webkit-transform 250ms ease-in-out;
+  -webkit-transition: opacity 100ms ease-in,
+ -webkit-transform 250ms ease-in-out;
+  transition: opacity 100ms ease-in,
+ -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out,
+ opacity 100ms ease-in;
+  transition: transform 250ms ease-in-out,
+ opacity 100ms ease-in,
+ -webkit-transform 250ms ease-in-out;
 }
 
 .header__hammenu :not(:last-child) {
@@ -759,7 +764,8 @@ button:hover::before,
         grid-template-rows: 1fr auto;
     -ms-grid-columns: 2fr 1fr 1fr 3fr;
         grid-template-columns: 2fr 1fr 1fr 3fr;
-        grid-template-areas: "logo col1 col2 cta" "socials col1 col2 copy";
+        grid-template-areas: "logo col1 col2 cta"
+ "socials col1 col2 copy";
     gap: 1.25rem;
     justify-items: start;
   }
